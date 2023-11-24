@@ -1,5 +1,12 @@
 pipeline {
   agent any
+
+  tools { 
+    
+        git 'localGit'
+        jdk 'localJava'
+        nodejs 'localNode'
+}
   stages {
     stage('Install dependence') {
       steps {
