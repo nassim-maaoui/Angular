@@ -16,8 +16,8 @@ pipeline {
     stage('Test') {
       steps {
         sh 'npm install -g karma jasmine protractor'
-        sh 'ng test'
-        sh 'ng e2e'
+        sh 'ng run test'
+        sh 'ng run e2e'
       }
     }
 
