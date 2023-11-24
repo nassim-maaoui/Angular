@@ -13,7 +13,7 @@ pipeline {
       }
     }
 
-    stage('Test') {
+    stage('Deploy') {
       post {
         always {
           junit '**/test-results.xml'
@@ -21,8 +21,7 @@ pipeline {
 
       }
       steps {
-        sh 'npm install -g jest jest-cli jest-junit'
-        sh 'jest --no-cache'
+        sh 'npm run deploy'
         echo 'bnj'
       }
     }
