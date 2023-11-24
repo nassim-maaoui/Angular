@@ -1,8 +1,5 @@
 pipeline {
   agent any
-    tools {
-    nodejs 'Nodejs_auto'
-  }
   stages {
     stage('Install dependance') {
       steps {
@@ -17,17 +14,21 @@ pipeline {
     }
 
     stage('Test') {
+      post {
+        always {
+          junit '**/test-results.xml'
+        }
+
+      }
       steps {
         sh 'npm install -g jest jest-cli jest-junit'
         sh 'jest --no-cache'
+        echo 'bnj'
       }
-      post {
-    always {
-      junit '**/test-results.xml'
-    }
-  }
     }
 
   }
-
+  tools {
+    nodejs 'Nodejs_auto'
+  }
 }
