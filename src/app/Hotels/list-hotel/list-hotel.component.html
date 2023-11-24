@@ -1,0 +1,248 @@
+<!--**********************-->
+
+  <div class="container-fluid">
+    <div class="row">
+    
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Liste de Hotels</h1>
+         <div>
+        <!-- Button trigger modal 
+  <button type="button"   class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add Hotel
+  </button>-->
+  <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-primary">Ajouter Hotel</button>
+         </div>
+        </div>
+    
+        <div class="w3-main" >
+            <div class="container-fluid">
+                <!-- Page Header Start -->
+                <div class="page-header mb-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 style="color:rgb(249, 247, 247);">Nos Produit</h1>
+                            </div>
+                            <div class="col-12">
+                                <a href="" style="color:rgb(249, 247, 247);">Home</a>
+                                <a href="" style="color:rgb(249, 247, 247);">Produit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Page Header End -->
+                <br><br>
+                <!-- Page Heading -->
+        
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">All Hotels</h6>
+                    </div>
+        
+                    <div class="card-body">
+        
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>NbreEtoile</th>
+                                        <th>description</th>
+                                        <th>prix</th>
+                                        <th>image</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+        
+                                    <tr *ngFor="let item of ListHotels;index as i">
+                                        <td>{{item.Nom}}</td>
+                                        <td>{{item.NbreEtoile}}</td>
+                                        <td>{{item.Description}}</td>
+                                        <td>{{item.Prix}}</td>
+                                        <td>
+                                            <img  width="100px" height="100px" [src]="'http://127.0.0.1:3000/getimage/'+ item.image " alt="">
+                                        </td>
+        
+                                        <td>
+                                            <button type="button" class="btn btn-success" (click)="getdata(item.Nom,item.NbreEtoile,item.Description,item.Prix,item.image,item._id)" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
+                                            <button class="btn btn-info" (click)="details(item._id)">Details</button>
+                                            <button class="btn btn-danger" (click)="delete(item._id)">Delete</button>
+                                        </td>
+                                    </tr>
+        
+        
+        
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        
+          
+        
+              
+            </div>
+ 
+  
+  </div>
+  
+  <!-- Modal 
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="w3-main ">
+  
+            <div class="container">
+        
+               
+                
+                <form [formGroup]="myForm" (ngSubmit)="sendData()">
+                    <!-- firstName validation start here
+                    <div class="form-group">
+        
+                        <label for="exampleFormControlInput1">Nom</label>
+                        <input formControlName="Nom" type="text" class="form-control" placeholder="Title" required name="Nom"  ngModel  >
+                    </div>
+                
+                    
+                    <!-- lastName validation end here -->
+        
+                    <!-- lastName validation start here 
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">NbreEtoile</label>
+                        <input formControlName="NbreEtoile" type="text" class="form-control" placeholder="NbreEtoile" required name="NbreEtoile"  ngModel >
+                    </div>
+                   
+                   
+        
+                    <!-- lastName validation start here 
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Description</label>
+                        <input formControlName="Description" type="text" class="form-control" placeholder="Description" required name="Description"   minlength="2" maxlength="20" ngModel>
+                    </div>
+                   
+                   
+                    <!-- lastName validation end here -->
+        
+        
+                    <!-- prix validation start here 
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Prix</label>
+                        <input  formControlName="Prix" type="number" class="form-control" placeholder="Prix" required name="Prix" ngModel>
+                    </div>
+                  
+                    <!-- prix validation end here -->
+        
+        
+                    <!-- image validation start here 
+        
+                    <div class="form-group">
+                        <label>image</label>
+                        <input formControlName="image"  type="file" multiple (change)="onFileSelected($event)"  class="form-control " laceholder="image" required name="image"   ngModel>
+        
+                    </div>
+                   
+                    <!-- Phone validation end here -
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary"  routerLink="/list">Add Hotel</button>
+                    </div>
+                </form>
+        
+        
+            </div>
+        
+        
+        
+        </div>
+        </div>
+     
+      </div>
+    </div>
+  </div>
+
+-->
+
+<div class="w3-container">
+    
+   
+  
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+  
+        <div class="w3-center"><br>
+          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+          <img src="../../../assets/images/team-4.jpg" alt="Avatar" style="width:30%" class="w3-circle w3-margin-top">
+        </div>
+        <div class="w3-main ">
+  
+            <div class="container">
+         
+        <form [formGroup]="myForm" (ngSubmit)="sendData()">
+            <!-- firstName validation start here -->
+            <div class="form-group">
+
+                <label for="exampleFormControlInput1">Nom</label>
+                <input formControlName="Nom" type="text" class="form-control" placeholder="Title" required name="Nom"  ngModel  >
+            </div>
+        
+            
+            <!-- lastName validation end here -->
+
+            <!-- lastName validation start here -->
+            <div class="form-group">
+                <label for="exampleFormControlInput1">NbreEtoile</label>
+                <input formControlName="NbreEtoile" type="text" class="form-control" placeholder="NbreEtoile" required name="NbreEtoile"  ngModel >
+            </div>
+           
+           
+
+            <!-- lastName validation start here -->
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Description</label>
+                <input formControlName="Description" type="text" class="form-control" placeholder="Description" required name="Description"   minlength="2" maxlength="20" ngModel>
+            </div>
+           
+           
+            <!-- lastName validation end here -->
+
+
+            <!-- prix validation start here -->
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Prix</label>
+                <input  formControlName="Prix" type="number" class="form-control" placeholder="Prix" required name="Prix" ngModel>
+            </div>
+          
+            <!-- prix validation end here -->
+
+
+            <!-- image validation start here -->
+
+            <div class="form-group">
+                <label>image</label>
+                <input formControlName="image"  type="file" multiple (change)="onFileSelected($event)"  class="form-control " laceholder="image" required name="image"   ngModel>
+
+            </div>
+           
+            <!-- Phone validation end here -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary"  routerLink="/listHotel">Add Hotel</button>
+            </div>
+        </form>
+</div></div>
+  
+       
+  
+      </div>
+    </div>
+  </div>

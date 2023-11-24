@@ -1,0 +1,76 @@
+
+<!-- Section Packages Start -->
+<section class="packages" id="packages">
+    <div class="container">
+      
+      <div class="main-txt">
+        <h1><span>V</span>oyage </h1>
+      </div>
+
+      <div class="row" style="margin-top: 30px;">
+
+        <div class="col-md-4 py-3 py-md-0" *ngFor="let item of ListVoyage">
+
+          <div class="card">
+            <img [src]="'http://127.0.0.1:3000/getimage/' + item.image" alt="ihab"  width="600" height="500">
+            <div class="card-body">
+              <h3>{{item.destination}}</h3>
+              <p>{{item.description}}</p>
+              <p>{{item.date}}</p>
+              <div class="star">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+              </div>
+              <h6>Price: <strong>{{item.prix}}DT</strong></h6>
+              <a routerLink="/login">Reserver</a>
+            </div>
+          </div>
+
+        </div>
+        <br>
+        <br>
+       <!-- <div class="col-md-4 py-3 py-md-0"  *ngFor="let item of ListHotels">
+
+          <div class="card">
+            <a routerLink="/details/:id"><img [src]="'http://127.0.0.1:3000/getimage/' + item.image" alt="ihab"></a>
+            <div class="card-body">
+              <h3>{{item.Nom}}</h3>
+              <p>{{item.Description}}</p>
+              <div class="star">
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star checked"></i>
+                <i class="fa-solid fa-star "></i>
+                <i class="fa-solid fa-star "></i>
+              </div>
+              <h6>Price: <strong>{{item.Prix}}</strong></h6>
+              <a href="#book">Book Now</a>
+            </div>
+          </div>
+
+        </div>
+        -->
+      
+
+       
+
+
+      </div>
+
+
+
+     
+
+
+    </div>
+  </section>
+  <!-- Section Packages End -->
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+
+ <!-- Section Book Start -->
+ <section class="book" id="book">
+    <div class="container">
+
+      <div class="main-text">
+        <h1><span>B</span>ook</h1>
+      </div>
+      
+      <div class="row">
+
+        <div class="col-md-6 py-3 py-md-0">
+          <div class="card">
+            <img src="../../assets/images/book-img.png" alt="">
+          </div>
+        </div>
+
+        <div class="col-md-6 py-3 py-md-0">
+          <form   [formGroup]="myForm" (ngSubmit)="sendData()">
+
+            <input type="text" formControlName="username" class="form-control" placeholder="Nom & Prenom" name="username"  ngModel ><br>
+            <input type="text" formControlName="nbreJour" class="form-control" placeholder="NbreJours" name="nbreJour" ngModel ><br>
+            <input type="text" formControlName="telephone" class="form-control" placeholder="Num telephone" name="telephone" ngModel ><br>
+            <input type="date" formControlName="DateDebut" class="form-control" placeholder="Arrivals" name="DateDebut"  ngModel ><br>
+            <input type="date" formControlName="DateFin" class="form-control" placeholder="Leaving"name="DateFin"  ngModel ><br>
+            <input type="submit" value="Book Now" class="submit" required>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Section Book End -->
