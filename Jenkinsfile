@@ -21,7 +21,7 @@ pipeline {
 
       }
       steps {
-        sh 'npm run deploy'
+        sh 'docker build -t Angular-:phase .'
         echo 'bnj'
       }
     }
