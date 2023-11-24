@@ -15,8 +15,8 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'npm install -g karma jasmine protractor'
-        sh 'npm run test'
+        sh 'npm install -g jest jest-cli jest-junit'
+        sh 'jest --no-cache'
       }
     }
 
