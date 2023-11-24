@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Install dependence') {
       steps {
-        sh 'pwd'
+        sh 'npm install'
       }
     }
 
