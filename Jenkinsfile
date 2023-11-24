@@ -9,14 +9,10 @@ tools{
         sh 'npm install'
       }
     }
-     stage('install') {
-      steps {
-        sh 'npm install -g @angular/cli'
-      }
-    }
+    
      stage('Build') {
       steps {
-        sh 'ng build'
+        sh 'npm run build'
       }
     }
 
