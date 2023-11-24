@@ -16,7 +16,10 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh ''' npm install -g @angular/cli  ng build'''      }
+        sh 'npm install -g @angular/cli'      }
+    }
+        steps {
+        sh 'ng build'      }
     }
 
   }
