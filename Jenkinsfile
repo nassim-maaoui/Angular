@@ -24,7 +24,7 @@ pipeline {
         echo 'bnj'
         sh '''npm install -g sonar-scanner --force
 '''
-        sh 'npm run sonar'
+        sh 'npm run sonar -X'
       }
     }
 
