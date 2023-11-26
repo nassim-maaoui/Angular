@@ -26,6 +26,10 @@ pipeline {
         echo 'nn'
         sh '''npm test 
 '''
+        sh '''which google-chrome
+'''
+        sh '''CHROME_BIN= /usr/bin/google-chrome npm test
+'''
       }
     }
 
