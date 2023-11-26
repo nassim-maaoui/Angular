@@ -20,11 +20,20 @@ pipeline {
         }
 
       }
+      stage('Test') {
       steps {
-        echo 'bnj'
-        sh '''ng test
-'''
+        script {
+          // Exécutez les tests et générer les rapports JUnit
+          sh 'npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI'
+        }
       }
+      post {
+        always {
+          // Publiez les rapports JUnit
+          junit '**/test-results.xml'
+        }
+      }
+    }
     }
 
   }
