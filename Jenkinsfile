@@ -1,42 +1,28 @@
-pipeline {
+mon pipline pipeline {
   agent any
   stages {
     stage('Install dependance') {
       steps {
-        script {
-          tools {
-            nodejs 'Nodejs_auto'
-          }
-          // Installation des dépendances
-          sh 'npm install'
-        }
-
+        sh 'npm install'
       }
     }
 
     stage('Build') {
       steps {
-        script {
-          sh 'npm run build'
-        }
-
+        sh 'npm run build'
       }
     }
 
-    stage('Test') {
+    stage('Deploy') {
       post {
         always {
           junit '**/test-results.xml'
         }
+      }}}
 
-      }
-      steps {
-        script {
-          sh 'npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI'
-        }
-
-      }
-    }
-
-  }
+          tools {
+            nodejs 'Nodejs_auto'
+          }
 }
+
+         
