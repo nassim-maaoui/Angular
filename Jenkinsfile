@@ -18,6 +18,12 @@ pipeline {
       steps {
         sh 'npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI'
       }
+       post {
+        always {
+          // Publiez les rapports JUnit
+          junit '**/test-results.xml'
+        }
+      }
     }
 
   }
