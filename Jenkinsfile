@@ -22,11 +22,8 @@ pipeline {
       }
       steps {
         echo 'bnj'
-        sh '''ng add @angular-devkit/build-angular
-'''
         sh '''ng test
 '''
-        sh 'npm run sonar -X'
       }
     }
 
