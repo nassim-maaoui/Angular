@@ -14,5 +14,11 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        sh 'npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI'
+      }
+    }
+
   }
 }
