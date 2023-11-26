@@ -24,7 +24,7 @@ pipeline {
         echo 'bnj'
         sh '''npm install -g sonar-scanner --force
 '''
-        sh '''ip a
+        sh '''sonar-scanner -Dsonar.host.url=http://192.168.78.130:9000 -X
 '''
         sh 'npm run sonar -X'
       }
