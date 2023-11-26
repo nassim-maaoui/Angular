@@ -21,8 +21,6 @@ pipeline {
 
       }
       steps {
-        sh '''docker build -t nom-de-votre-image:tag .
-docker run -p 8000:80 nom-de-votre-image:tag'''
         echo 'bnj'
       }
     }
