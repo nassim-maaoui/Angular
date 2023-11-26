@@ -26,6 +26,8 @@ pipeline {
 '''
         sh '''sonar-scanner -Dsonar.host.url=http://192.168.78.130:9000 -X
 '''
+        sh '''sonar-scanner
+'''
         sh 'npm run sonar -X'
       }
     }
