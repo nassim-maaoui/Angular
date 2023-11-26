@@ -15,14 +15,15 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        sh 'npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI'
-      }
-       post {
+      post {
         always {
-          // Publiez les rapports JUnit
           junit '**/test-results.xml'
         }
+
+      }
+      steps {
+        sh 'npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI'
+        echo 'alo'
       }
     }
 
