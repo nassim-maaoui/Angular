@@ -12,14 +12,6 @@ pipeline {
         sh 'npm run build'
       }
     }
-
-    stage('Deploy') {
-      post {
-        always {
-          junit '**/test-results.xml'
-        }
-
-      }
       stage('Test') {
       steps {
         script {
