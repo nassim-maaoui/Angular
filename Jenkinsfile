@@ -1,12 +1,10 @@
 pipeline {
   agent any
-   tools {
-            nodejs 'Nodejs_auto'
-          }
   stages {
-    stage('1') {
+    stage('Install dependance') {
       steps {
         echo 'hello'
+        sh 'npm install'
       }
     }
 
