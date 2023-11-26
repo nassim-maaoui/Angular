@@ -3,33 +3,40 @@ pipeline {
   stages {
     stage('Install dependance') {
       steps {
-        sh 'npm install'
+        script {
+          // Utilisation de Node.js installé avec l'outil Nodejs_auto
+          tools {
+            nodejs 'Nodejs_auto'
+          }
+          // Installation des dépendances
+          sh 'npm install'
+        }
       }
     }
 
     stage('Build') {
       steps {
-        sh 'npm run build'
+        script {
+          // Build de l'application
+          sh 'npm run build'
+        }
       }
     }
-      stage('Test') {
+
+    stage('Test') {
       steps {
         script {
-          // Exécutez les tests et générer les rapports JUnit
+          // Exécution des tests et génération des rapports JUnit
           sh 'npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI'
         }
       }
       post {
         always {
-          // Publiez les rapports JUnit
+          // Publication des rapports JUnit
           junit '**/test-results.xml'
         }
       }
     }
-    }
 
-  }
-  tools {
-    nodejs 'Nodejs_auto'
   }
 }
