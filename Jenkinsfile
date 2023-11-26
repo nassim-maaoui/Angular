@@ -23,7 +23,7 @@ pipeline {
 
       }
       steps {
-        sh 'npm test -- --no-watch --no-progress --browsers=ChromeHeadlessCI'
+        sh 'npm test'
         echo 'oui'
       }
     }
