@@ -12,9 +12,6 @@ pipeline {
       steps {
         sh 'npm run build'
         sh 'npm install karma-chrome-launcher'
-        sh '''
-npm install -g karma
-'''
       }
     }
 
