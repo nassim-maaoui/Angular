@@ -22,7 +22,8 @@ pipeline {
       }
       steps {
         echo 'bnj'
-        sh 'npm install --save sonar-scanner'
+        sh '''npm install -g sonar-scanner --force
+'''
         sh 'npm run sonar'
       }
     }
