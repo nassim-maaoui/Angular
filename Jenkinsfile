@@ -24,7 +24,7 @@ pipeline {
       }
       steps {
         echo 'nn'
-        sh '''npm test -- --single-run=false
+        sh '''npm test 
 '''
       }
     }
