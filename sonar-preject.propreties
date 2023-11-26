@@ -1,11 +1,7 @@
+
 sonar.projectKey=my-angular-project
 sonar.projectName=My Angular Project
 sonar.projectVersion=1.0
-
 sonar.sources=src
-sonar.exclusions=**/node_modules/**, **/*.spec.ts
-sonar.tests=src
-sonar.test.inclusions=**/*.spec.ts
-sonar.ts.tslintconfigpath=tslint.json
-sonar.host.url=http://adresse-ip-de-sonarqube:9000
-
+sonar.tests=src/test
+sonar.typescript.tsconfigPath=tsconfig.json
