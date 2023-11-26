@@ -22,9 +22,9 @@ pipeline {
       }
       steps {
         echo 'bnj'
-        sh '''npm install -g sonar-scanner --force
+        sh '''ng add @angular-devkit/build-angular
 '''
-        sh '''sonar-scanner
+        sh '''ng test
 '''
         sh 'npm run sonar -X'
       }
