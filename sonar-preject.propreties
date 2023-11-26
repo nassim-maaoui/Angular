@@ -7,5 +7,5 @@ sonar.exclusions=**/node_modules/**, **/*.spec.ts
 sonar.tests=src
 sonar.test.inclusions=**/*.spec.ts
 sonar.ts.tslintconfigpath=tslint.json
-sonar.host.url=http://adresse-ip-de-la-machine-virtuelle:9000
+sonar.host.url=http://adresse-ip-de-sonarqube:9000
 
