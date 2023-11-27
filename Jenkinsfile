@@ -1,5 +1,8 @@
 pipeline {
   agent any
+    tools {
+            nodejs 'Nodejs_auto'
+          }
   stages {
     stage('Install dependance') {
       steps {
