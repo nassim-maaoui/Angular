@@ -13,6 +13,7 @@ pipeline {
         sh '''npm install @angular/cli
 '''
         sh 'npm run build'
+        sh 'export CHROME_BIN=google-chrome'
         sh '''node_modules/.bin/ng test
 '''
       }
