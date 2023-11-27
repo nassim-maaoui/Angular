@@ -18,5 +18,11 @@ pipeline {
       }
     }
 
+    stage('waw') {
+      steps {
+        echo 'hello'
+      }
+    }
+
   }
 }
