@@ -11,7 +11,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm run build'
-        sh 'npm install karma-chrome-launcher'
+        sh 'ng test'
       }
     }
 
@@ -25,7 +25,6 @@ pipeline {
       steps {
         echo 'nn'
         sh 'npm test'
-        sh 'ng test'
       }
     }
 
