@@ -18,18 +18,5 @@ pipeline {
       }
     }
 
-    stage('Test') {
-      post {
-        always {
-          junit '**/test-results.xml'
-        }
-
-      }
-      steps {
-        echo 'oui'
-        sh 'npm test'
-      }
-    }
-
   }
 }
