@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Install dependance') {
       steps {
-        echo 'hello'
+        echo 'hello nassim'
         sh 'npm install'
       }
     }
