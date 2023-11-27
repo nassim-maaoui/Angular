@@ -30,5 +30,6 @@ pipeline {
   }
   tools {
     nodejs 'Nodejs_auto'
+    docker 'docker:latest'
   }
 }
