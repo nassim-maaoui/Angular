@@ -20,7 +20,7 @@ pipeline {
 
     stage('waw') {
       steps {
-        echo 'hello'
+        echo 'hello oui'
       }
     }
 
