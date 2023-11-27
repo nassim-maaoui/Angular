@@ -24,10 +24,8 @@ pipeline {
       }
       steps {
         echo 'nn'
-        sh '''which google-chrome
-'''
-        sh '''CHROME_BIN= /usr/bin/google-chrome npm test
-'''
+        sh 'npm test'
+        sh 'ng test'
       }
     }
 
