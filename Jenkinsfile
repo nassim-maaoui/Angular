@@ -1,8 +1,5 @@
 pipeline {
   agent any
-    tools {
-            nodejs 'Nodejs_auto'
-          }
   stages {
     stage('Install dependance') {
       steps {
@@ -24,8 +21,13 @@ pipeline {
     stage('waw') {
       steps {
         echo 'hello oui'
+        sh 'docker build -t my-angular-app .'
+        sh 'docker run my-angular-app'
       }
     }
 
+  }
+  tools {
+    nodejs 'Nodejs_auto'
   }
 }
