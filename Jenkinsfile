@@ -10,10 +10,11 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh '''sudo npm install -g @angular/cli
+        sh '''npm install @angular/cli
 '''
         sh 'npm run build'
-        sh 'ng test'
+        sh '''node_modules/.bin/ng test
+'''
       }
     }
 
