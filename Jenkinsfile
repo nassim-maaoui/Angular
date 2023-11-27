@@ -26,7 +26,7 @@ pipeline {
 
       }
       steps {
-        echo 'nn'
+        echo 'oui'
         sh 'npm test'
       }
     }
