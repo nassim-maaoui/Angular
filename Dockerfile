@@ -1,5 +1,5 @@
 # Utilisez une image parent officielle Node.js
-FROM node:18
+FROM node:16
 
 # Définissez le répertoire de travail dans le conteneur
 WORKDIR /usr/src/app
@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 4200
 
 # Construisez l'application Angular
-CMD ["ng", "serve", "--host", "0.0.0.0", "--disable-host-check"]
+CMD ["ng", "serve"]
