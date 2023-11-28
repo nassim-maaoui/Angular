@@ -3,10 +3,8 @@ pipeline {
   stages {
     stage('Install dependencies') {
       steps {
-        echo 'Hello Nassim'
-        script {
-          def npmCache = tool 'npm'
-          sh "npm install --cache ${npmCache}/.npm"
+       
+          sh "npm install --cache "
         }
 
       }
