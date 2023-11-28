@@ -23,7 +23,6 @@ pipeline {
         echo 'Hello oui'
         sh 'docker build -t my-angular-app .'
         sh 'docker run -p 4200:4200 -e "NG_CLI_ANALYTICS=false" my-angular-app'
-
       }
     }
 
