@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  environment {
-        CHROME_BIN = 'google-chrome'
-    }
   stages {
     stage('Install dependance') {
       steps {
@@ -27,12 +24,17 @@ pipeline {
         echo 'hello oui'
         sh 'docker build -t my-angular-app .'
         sh 'docker run -p 4200:4200 my-angular-app'
+        sh '''ng serve --host 0.0.0.0
+'''
       }
     }
 
   }
   tools {
     nodejs 'Nodejs_auto'
-   dockerTool 'docker'
+    dockerTool 'docker'
+  }
+  environment {
+    CHROME_BIN = 'google-chrome'
   }
 }
