@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment {
+        CHROME_BIN = 'google-chrome'
+    }
   stages {
     stage('Install dependance') {
       steps {
@@ -23,7 +26,7 @@ pipeline {
       steps {
         echo 'hello oui'
         sh 'docker build -t my-angular-app .'
-        sh 'docker run my-angular-app'
+        sh 'docker run -p 4200:4200 my-angular-app'
       }
     }
 
