@@ -3,10 +3,7 @@ pipeline {
   stages {
     stage('Install dependencies') {
       steps {
-       
-          sh "npm install --cache "
-        
-
+        sh 'npm install --cache '
       }
     }
 
@@ -25,7 +22,7 @@ pipeline {
       steps {
         echo 'Hello oui non yes'
         sh 'docker build -t my-angular-app .'
-        sh 'docker run -p 4200:4200 -e "NG_CLI_ANALYTICS=false" my-angular-app --host 0.0.0.0'
+        sh 'docker run -p 4200:4200 -e NG_CLI_ANALYTICS=false my-angular-app'
       }
     }
 
