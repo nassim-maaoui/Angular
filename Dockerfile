@@ -20,4 +20,4 @@ COPY . .
 EXPOSE 4200
 
 # Construisez l'application Angular
-CMD ["npm", "run", "build"]
+CMD ["ng", "serve", "--host", "0.0.0.0", "--disable-host-check"]
