@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Installez Angular CLI globalement
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli@16.0.0
 
 # Installez les dépendances
 RUN npm install
