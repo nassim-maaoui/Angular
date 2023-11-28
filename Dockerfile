@@ -1,20 +1,23 @@
-# Utiliser une image de base avec Node.js
+# Utilisez une image parent officielle Node.js
 FROM node:16
 
-# Définir le répertoire de travail
+# Définissez le répertoire de travail dans le conteneur
 WORKDIR /usr/src/app
 
-# Copier les fichiers du projet dans le conteneur
-COPY . .
+# Copiez package.json et package-lock.json dans le répertoire de travail
+COPY package*.json ./
 
-# Installer les dépendances
+# Installez Angular CLI globalement
+RUN npm install -g @angular/cli
+
+# Installez les dépendances
 RUN npm install
 
-# Construire l'application
-RUN npm run build
+# Copiez le reste du code de l'application
+COPY . .
 
-# Exposer le port 80
-EXPOSE 80
+# Exposez le port sur lequel l'application s'exécute
+EXPOSE 4200
 
-# Commande pour démarrer l'application
-CMD ["npm", "start"]
+# Construisez l'application Angular
+CMD ["npm", "run", "build"]
