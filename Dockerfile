@@ -1,23 +1,8 @@
-# Utilisez une image parent officielle Node.js
-FROM node:16
-
-# Définissez le répertoire de travail dans le conteneur
-WORKDIR /usr/src/app
-
-# Copiez package.json et package-lock.json dans le répertoire de travail
-COPY package*.json ./
-
-# Installez Angular CLI globalement
-RUN npm install -g @angular/cli
-
-# Installez les dépendances
-RUN npm install
-
-# Copiez le reste du code de l'application
+FROM node:latest as build
+WORKDIR /app
 COPY . .
+RUN npm install
+RUN npm run build
 
-# Exposez le port sur lequel l'application s'exécute
-EXPOSE 4200
-
-# Construisez l'application Angular
-CMD ["npm", "run", "build"]
+FROM nginx:latest
+COPY --from=build /app/dist /usr/share/nginx/html
