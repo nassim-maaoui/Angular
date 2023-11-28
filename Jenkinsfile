@@ -25,7 +25,7 @@ pipeline {
 
     stage('Run in Docker') {
       steps {
-        echo 'Hello oui non'
+        echo 'Hello oui non yes'
         sh 'docker build -t my-angular-app .'
         sh 'docker run -p 4200:4200 -e "NG_CLI_ANALYTICS=false" my-angular-app --host 0.0.0.0'
       }
