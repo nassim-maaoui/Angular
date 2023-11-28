@@ -1,40 +1,36 @@
 pipeline {
   agent any
   stages {
-    stage('Install dependance') {
+    stage('Install dependencies') {
       steps {
-        echo 'hello nassim'
+        echo 'Hello Nassim'
         sh 'npm install'
       }
     }
 
     stage('Build') {
       steps {
-        sh '''npm install @angular/cli
-'''
+        sh 'npm install @angular/cli'
         sh 'npm run build'
-        sh 'export CHROME_BIN=google-chrome'
-        sh '''node_modules/.bin/ng test
-'''
+        // Note: Setting the CHROME_BIN environment variable here may not be necessary
+        // as it's generally set in the karma.conf.js file.
+        // environment {
+        //   CHROME_BIN = 'google-chrome'
+        // }
+        sh 'npm run test' // Use npm script to run tests
       }
     }
 
-    stage('waw') {
+    stage('Run in Docker') {
       steps {
-        echo 'hello oui'
+        echo 'Hello oui'
         sh 'docker build -t my-angular-app .'
         sh 'docker run -p 4200:4200 my-angular-app'
-        sh '''ng serve --host 0.0.0.0
-'''
       }
     }
-
   }
   tools {
     nodejs 'Nodejs_auto'
     dockerTool 'docker'
-  }
-  environment {
-    CHROME_BIN = 'google-chrome'
   }
 }
