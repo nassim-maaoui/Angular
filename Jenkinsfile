@@ -7,7 +7,7 @@ pipeline {
       }
     }
 
-    stage('Build') {
+    stage('Build et Test') {
       steps {
         sh 'rm -rf node_modules'
         sh 'npm install'
